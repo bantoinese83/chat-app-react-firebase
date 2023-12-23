@@ -1,0 +1,92 @@
+:root {
+    /* Existing variables */
+    --scrollbar-width: 6px;
+    --scrollbar-color: rgba(0, 0, 0, 0.2);
+    --scrollbar-hover-color: rgba(0, 0, 0, 0.4);
+    --chat-bubble-padding: 10px 15px;
+    --chat-bubble-margin: 5px;
+    --chat-bubble-border-radius: 10px;
+    --chat-bubble-font-size: 16px;
+    --chat-bubble-even-color: #4a90e2;
+    --chat-bubble-odd-color: rgba(0, 0, 0, 0.64);
+    --timestamp-font-size: 12px;
+    --timestamp-color: #888;
+    --chat-bubble-width: auto;
+    --chat-bubble-min-width: 800px; /* Minimum width for chat bubbles */
+    --chat-bubble-max-width: 100%; /* Increased to 100% */
+}
+
+/* ChatDashboard */
+.chat-dashboard {
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+    width: 100%;
+    max-width: 700px; /* Adjust the max-width of the chat dashboard if necessary */
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+/* ChatList - refined scrollbar styles */
+.chat-list {
+    /* existing styles... */
+    overflow: auto;
+    max-height: calc(80vh - 60px); /* Adjust as needed */
+    padding-bottom: 50px; /* Padding for the footer */
+}
+
+/* MessageInput */
+.message-input {
+    margin-bottom: 10px;
+}
+
+/* SendButton */
+.send-button {
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    padding-bottom: 50px; /* Add padding equal to the footer's height */
+
+
+}
+
+/* ChatBubble */
+.chat-bubble {
+    width: var(--chat-bubble-width);
+    min-width: var(--chat-bubble-min-width);
+    max-width: var(--chat-bubble-max-width); /* Chat bubble can now expand up to 100% of its container width */
+    padding: var(--chat-bubble-padding);
+    margin: var(--chat-bubble-margin);
+    border-radius: var(--chat-bubble-border-radius);
+    font-size: var(--chat-bubble-font-size);
+    background-color: var(--chat-bubble-even-color); /* Example for even chat bubbles */
+    /* Other styles... */
+}
+
+/* ChatBubble Even */
+.chat-bubble-even {
+    background-color: var(--chat-bubble-even-color);
+    color: white;
+}
+
+/* ChatBubble Odd */
+.chat-bubble-odd {
+    background-color: var(--chat-bubble-odd-color);
+    color: white;
+}
+
+/* Timestamp */
+.timestamp {
+    font-size: var(--timestamp-font-size);
+    color: var(--timestamp-color);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .chat-bubble {
+        --chat-bubble-max-width: 100%; /* Chat bubbles take full width on small screens */
+    }
+}
